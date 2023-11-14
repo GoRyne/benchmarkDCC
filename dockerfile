@@ -5,4 +5,5 @@ RUN apt-get update \
 
 RUN git clone https://github.com/TalwalkarLab/leaf.git 
 RUN pip install --upgrade pip
-## RUN pip install -r /leaf/requirements.txt
+RUN pip install -r /leaf/requirements.txt
+RUN pip install pillow

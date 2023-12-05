@@ -3,8 +3,8 @@
 # docker run -it --net=host --gpus all --name containerName imageName
 
 # Use this command in container
-# cd /benchmarkDCC/linear_road
-# sh generator.sh
+# sh /benchmarkDCC/linear_road/generator.sh
+
 
 FROM ubuntu:20.04
 
@@ -19,7 +19,7 @@ RUN apt-get update \
     && git clone https://github.com/GoRyne/benchmarkDCC.git \
     && wget https://archive.apache.org/dist/spark/spark-3.2.3/spark-3.2.3-bin-hadoop3.2.tgz \
     && wget --no-check-certificate https://archive.apache.org/dist/kafka/2.5.0/kafka_2.12-2.5.0.tgz \
-    && mkdir /opt/spark && mkdir /data && mkdir /data/datasets \
+    && mkdir /opt/spark && mkdir /data && mkdir /data/datasets && /data/datasets/inputcsv \
     && pip install kafka-python\
     && tar -xf spark-3.2.3-bin-hadoop3.2.tgz -C /opt/spark --strip-component 1 \
     && tar -xzvf kafka_2.12-2.5.0.tgz -C /usr/local/src/ \

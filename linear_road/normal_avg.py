@@ -94,7 +94,7 @@ def consumer(avgTuplesDuringInterval, timeInterval):
         timestamp = time.time()
         # Use NFS path for running spark cluster.
         # filename = os.path.join("/data/nfs/" + str(timestamp) + ".csv")
-        filename = os.path.join("/data/ibizanfs/inputcsv/" + str(timestamp) + ".csv")
+        filename = os.path.join("/data/datasets/inputcsv/" + str(timestamp) + ".csv")
         fp = open(filename, 'w', newline='')
         writer = csv.writer(fp)
         writer.writerows(data)

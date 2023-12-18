@@ -9,6 +9,6 @@ sh /usr/local/src/kafka_2.12-2.5.0/bin/kafka-topics.sh --create --topic test --b
 # sh /usr/local/src/kafka_2.12-2.5.0/bin/kafka-console-consumer.sh --topic test --bootstrap-server localhost:9092                    # -> to consume messages   
 cd /LinearGenerator/src
 javac com/walmart/linearroad/generator/*.java
-nohup java com.walmart.linearroad.generator.LinearGen -x 500 -m 8 1>/data/datasets/output_0 2>/data/datasets/error_0 &
+nohup java com.walmart.linearroad.generator.LinearGen -x 10 -m 8 1>/data/datasets/output_0 2>/data/datasets/error_0 &
 cd /benchmarkDCC/linear_road
-python3 normal_avg.py 1000 0.1
+python3 normal_avg.py 1000 2

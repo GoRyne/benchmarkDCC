@@ -11,4 +11,4 @@ cd /LinearGenerator/src
 javac com/walmart/linearroad/generator/*.java
 nohup java com.walmart.linearroad.generator.LinearGen -x 10 -m 8 1>/data/datasets/output_0 2>/data/datasets/error_0 &
 cd /benchmarkDCC/linear_road
-python3 normal_avg.py 1000 2
+python3 normal_avg.py 100 2

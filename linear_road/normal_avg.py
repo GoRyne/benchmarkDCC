@@ -8,7 +8,7 @@ import csv
 from datetime import datetime, timezone
 
 def producer(avgTuplesDuringInterval, timeInterval):
-    producer = KafkaProducer(bootstrap_servers=['163.239.14.92:9092'])
+    producer = KafkaProducer(bootstrap_servers=['localhost:9092'])
     topic = "linear-road-topic"
     print("Kafka producer started - Data ingestion to linear_road topic") 
 
@@ -62,7 +62,7 @@ def producer(avgTuplesDuringInterval, timeInterval):
 
 def consumer(avgTuplesDuringInterval, timeInterval):
     topic = "linear-road-topic"
-    consumer = KafkaConsumer(topic, bootstrap_servers=['163.239.14.92:9092'], 
+    consumer = KafkaConsumer(topic, bootstrap_servers=['localhost:9092'], 
                                 enable_auto_commit=True, auto_offset_reset='latest',
                                 max_poll_records=300000, max_partition_fetch_bytes=10485760)
     print("Kafka consumer started - Data copying from kafka topic to hdfs")
